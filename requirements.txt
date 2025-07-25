@@ -1,0 +1,10 @@
+streamlit==1.45.1
+pandas
+numpy
+datetime
+httpx
+requests
+openpyxl
+xlsxwriter
+beautifulsoup4
+certifi
