@@ -8,3 +8,4 @@ openpyxl
 xlsxwriter
 beautifulsoup4
 certifi
+xlrd
