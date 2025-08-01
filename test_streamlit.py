@@ -6,6 +6,8 @@ import datetime
 import ssl
 from bs4 import BeautifulSoup
 import urllib.request, urllib.parse, urllib.error, os
+import urllib3
+from urllib3.exceptions import InsecureRequestWarning
 
 color_gap_up = 'rgb(105,190,40)'
 color_gap_down = 'rgb(255, 0, 0)'
@@ -45,6 +47,7 @@ def metrica_360(text_size = '18px', color_text = "#00264e",
 excel_url = "https://www.bcv.org.ve/sites/default/files/EstadisticasGeneral/1_1_4.xls"
 
 # Obtener el contenido del archivo
+urllib3.disable_warnings(InsecureRequestWarning)
 response = requests.get(excel_url, verify=False)
 
 xls = pd.ExcelFile(BytesIO(response.content))
